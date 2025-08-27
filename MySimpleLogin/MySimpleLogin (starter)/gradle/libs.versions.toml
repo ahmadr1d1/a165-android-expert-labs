@@ -1,5 +1,6 @@
 [versions]
 androidGradlePlugin = "8.11.1"
+koinAndroid = "4.1.0"
 kotlin = "2.2.10"
 appcompat = "1.7.1"
 core-ktx = "1.17.0"
@@ -12,6 +13,9 @@ espresso = "3.7.0"
 [libraries]
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
+koin-core = { module = "io.insert-koin:koin-core", version.ref = "koinAndroid" }
+koin-test-junit4 = { module = "io.insert-koin:koin-test-junit4", version.ref = "koinAndroid" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 

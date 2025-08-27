@@ -7,11 +7,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dicoding.mysimplelogin.databinding.ActivityMainBinding
+import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
-    lateinit var userRepository: UserRepository
+    private lateinit var binding: ActivityMainBinding
+//    private lateinit var userRepository: UserRepository
+    private val userRepository: UserRepository by inject()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +27,8 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val sesi = SessionManager(this)
-        userRepository = UserRepository.getInstance(sesi)
+//        val sesi = SessionManager(this)
+//        userRepository = UserRepository.getInstance(sesi)
 
         if (userRepository.isUserLogin()) {
             moveToHomeActivity()
