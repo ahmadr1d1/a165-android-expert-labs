@@ -7,6 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dicoding.mysimplelogin.databinding.ActivityMainBinding
+import com.example.core.SessionManager
+import com.example.core.UserRepository
 
 class MainActivity : AppCompatActivity() {
 
