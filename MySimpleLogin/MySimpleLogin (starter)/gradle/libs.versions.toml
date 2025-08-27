@@ -1,5 +1,6 @@
 [versions]
 androidGradlePlugin = "8.11.1"
+dagger = "2.57.1"
 kotlin = "2.2.10"
 appcompat = "1.7.1"
 core-ktx = "1.17.0"
@@ -12,6 +13,8 @@ espresso = "3.7.0"
 [libraries]
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
+dagger = { module = "com.google.dagger:dagger", version.ref = "dagger" }
+dagger-compiler = { module = "com.google.dagger:dagger-compiler", version.ref = "dagger" }
 material = { module = "com.google.android.material:material", version.ref = "material" }
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 

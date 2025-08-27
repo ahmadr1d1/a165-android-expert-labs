@@ -1,16 +1,12 @@
 package com.dicoding.mysimplelogin
 
-class UserRepository(private val sesi: SessionManager) {
+import android.util.Log
+import jakarta.inject.*
 
-    companion object {
-        @Volatile
-        private var instance: UserRepository? = null
+@Singleton
+class UserRepository @Inject constructor(private val sesi: SessionManager) {
 
-        fun getInstance(sesi: SessionManager): UserRepository =
-            instance ?: synchronized(this) {
-                instance ?: UserRepository(sesi)
-            }
-    }
+    fun checkInstance() = Log.d("Singleton", "checkInstance: $this")
 
     fun loginUser(username: String) {
         sesi.createLoginSession()

@@ -7,13 +7,18 @@ import androidx.activity.enableEdgeToEdge
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dicoding.mysimplelogin.databinding.ActivityMainBinding
+import jakarta.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMainBinding
+    @Inject
     lateinit var userRepository: UserRepository
+    @Inject
+    lateinit var userRepository2: UserRepository
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        (application as MyApplication).appComponent.inject(this)
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -24,8 +29,11 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val sesi = SessionManager(this)
-        userRepository = UserRepository.getInstance(sesi)
+        // check whether the singleton annotation actually works like a manual singleton
+        userRepository.checkInstance()
+        userRepository2.checkInstance()
+//        val sesi = SessionManager(this)
+//        userRepository = UserRepository.getInstance(sesi)
 
         if (userRepository.isUserLogin()) {
             moveToHomeActivity()
